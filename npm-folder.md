@@ -33,9 +33,9 @@ npm 安装的包会被放在node_modules中，有两个位置：
 
 ## executables
 
-全局安装时，executables都放在prefix/bin下（Unix），请确保prefix/bin被加入到`PATH`环境变量中，便于在任意目录执行。
+全局安装时，executables会在prefix/bin下（Unix）创建symbol link，请确保prefix/bin被加入到`PATH`环境变量中，便于在任意目录执行。
 
-局部安装时，executables会在./node_modules/.bin下创建symbol link，于是就可以使用npm scripts执行这些命令。
+局部安装时，executables会在./node_modules/.bin下创建symbol link，执行npm run xxx时，npm 会查找 `node_modules/.bin` 目录下是否有对应的可执行文件。如果找到了，npm 会使用该可执行文件执行对应的命令。
 
 ## packages installation process
 
